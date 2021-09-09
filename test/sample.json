@@ -1,0 +1,41 @@
+{"event":"logger-configured","level":30,"ts":"2021-09-09T21:24:00.624Z"}
+{"event":"starting","host":"0.0.0.0","level":30,"port":9088,"subject":"admin-interface","ts":"2021-09-09T21:24:01.289Z"}
+{"event":"started","level":30,"port":8088,"ts":"2021-09-09T21:24:01.290Z"}
+{"event":"Creating etcd connection:","hosts":["http://localhost:2379"],"level":30,"ts":"2021-09-09T21:24:01.396Z"}
+{"err":{"code":"ECONNREFUSED","message":"connect ECONNREFUSED 127.0.0.1:2808","name":"Error","stack":"Error: connect ECONNREFUSED 127.0.0.1:2808\n    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16)"},"event":"tchalla ping failed","level":4
+0,"msg":"retrying shortly","retryIn":120000,"ts":"2021-09-09T21:24:01.417Z","url":"http://localhost:2808"}
+{"extras":{"requestId":"01FF674WND71F3WTY41WSK0850"},"ip":"::ffff:127.0.0.1","level":30,"operationName":"createUser","spanId":"c908360c70bded6a","text":"JABARI","traceFlags":"01","traceId":"88206663fe0c080df4ab5b05c9515587","ts":"2021-09-09T21:24:17.741Z"}
+{"extras":{"userCtx":{"ip":"::ffff:127.0.0.1","organizationId":false,"originRequestId":"01FF674WND71F3WTY41WSK0850","roles":[["anon","access","*"]],"signature":"308187024201975f31539fc86bd7a3d97ed4f1c6b27a8f209a7f1bdaf439dbc5ba3579a88d37c46a6f173235ce218a3b6e8df0961a5911e50a17351dc9bd7c8d64300a994a35d402417bfcfbac498df3915c5e6f59d7063ab744392e8f9557f4238e651fbca225fb389ae2fbeeeea69b9b757df7782333256ed780e6d4134ea23ed770b307f1d99ffdcc","userId":"::ffff:127.0.0.1"}},"level":30,"spanId":"c908360c70bded6a","t ext":"got user context","traceFlags":"01","traceId":"88206663fe0c080df4ab5b05c9515587","ts":"2021-09-09T21:24:17.774Z"}
+{"extras":{"userCtx":{"ip":"::ffff:127.0.0.1","organizationId":false,"originRequestId":"01FF674WND71F3WTY41WSK0850","roles":[["anon","access","*"]],"signature":"308187024201975f31539fc86bd7a3d97ed4f1c6b27a8f209a7f1bdaf439dbc5ba3579a88d37c46a6f173235ce218a 3b6e8df0961a5911e50a17351dc9bd7c8d64300a994a35d402417bfcfbac498df3915c5e6f59d7063ab744392e8f9557f4238e651fbca225fb389ae2fbeeeea69b9b757df7782333256ed780e6d4134ea23ed770b307f1d99ffdcc","userId":"::ffff:127.0.0.1"}},"level":30,"message":"GraphQL Audit","ope rationName":"createUser","spanId":"c908360c70bded6a","traceFlags":"01","traceId":"88206663fe0c080df4ab5b05c9515587","ts":"2021-09-09T21:24:17.774Z"}
+{
+  traceId: '88206663fe0c080df4ab5b05c9515587',
+  parentId: undefined,
+  name: 'HTTP POST',
+  id: 'c908360c70bded6a',
+  kind: 1,
+  timestamp: 1631222657717128,
+  duration: 1854243,
+  attributes: {
+    'http.url': 'http://localhost:8088/graphql',
+    'http.host': 'localhost:8088',
+    'net.host.name': 'localhost',
+    'http.method': 'POST',
+    'http.route': '/graphql',
+    'http.target': '/graphql',
+    'http.user_agent': 'axios/0.21.1',
+    'http.request_content_length_uncompressed': 857,
+    'http.flavor': '1.1',
+    'net.transport': 'ip_tcp',
+    'net.host.ip': '::ffff:127.0.0.1',
+    'net.host.port': 8088,
+    'net.peer.ip': '::ffff:127.0.0.1',
+    'net.peer.port': 34020,
+    'http.status_code': 200,
+    'http.status_text': 'OK'
+  },
+  status: { code: 1 },
+  events: []
+}
+{"authorizationToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxRkY2NzRYOVFBQjQ1QzVWUzRaNkdTTlMzIiwiaWF0IjoxNjMxMjIyNjU5LCJleHAiOjE2MzE4Mjc0NTl9.MSDrm8Iye5veXbcdDxC-uHKg6bhuR3_VnD9E0BzjMjU","extras":{"requestId":"01FF674YFMXFP5WBQ0Y87DG3PE"},"ip": "::ffff:127.0.0.1","level":30,"operationName":"me","spanId":"3f6df4686e745df7","text":"JABARI","traceFlags":"01","traceId":"2ebcb0ff92c9cda4f3d9fa9f7652022e","ts":"2021-09-09T21:24:19.577Z"}
+{"extras":{"userCtx":{"ip":"::ffff:127.0.0.1","organizationId":false,"originRequestId":"01FF674YFMXFP5WBQ0Y87DG3PE","roles":[["user","owner","01FF674X9QAB45C5VS4Z6GSNS3"]],"signature":"30818802420124dab860bd58e6fc02352e99a2edf20a2bdef487040f25f81f3df0f43a f517a94e520daa45ed0272c21455c7ad871be85b13d54eca37262e254e9e13bb9c3459110242014550be6a8745e57a54774b96ce82a2f8717dbd1bb84ebccdd9ca84bda231646ba15dc2c7bcd0cd907f4c27c98e6a004212fea522235e787f717ec1bdee145ca7a1","userId":"01FF674X9QAB45C5VS4Z6GSNS3"}},"level":30,"spanId":"3f6df4686e745df7","text":"got user context","traceFlags":"01","traceId":"2ebcb0ff92c9cda4f3d9fa9f7652022e","ts":"2021-09-09T21:24:20.129Z"}
+{"extras":{"userCtx":{"ip":"::ffff:127.0.0.1","organizationId":false,"originRequestId":"01FF674YFMXFP5WBQ0Y87DG3PE","roles":[["user","owner","01FF674X9QAB45C5VS4Z6GSNS3"]],"signature":"30818802420124dab860bd58e6fc02352e99a2edf20a2bdef487040f25f81f3df0f43a f517a94e520daa45ed0272c21455c7ad871be85b13d54eca37262e254e9e13bb9c3459110242014550be6a8745e57a54774b96ce82a2f8717dbd1bb84ebccdd9ca84bda231646ba15dc2c7bcd0cd907f4c27c98e6a004212fea522235e787f717ec1bdee145ca7a1","userId":"01FF674X9QAB45C5VS4Z6GSNS3"}},"level":30,"message":"GraphQL Audit","operationName":"me","spanId":"3f6df4686e745df7","traceFlags":"01","traceId":"2ebcb0ff92c9cda4f3d9fa9f7652022e","ts":"2021-09-09T21:24:20.129Z"}
