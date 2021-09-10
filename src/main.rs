@@ -4,9 +4,6 @@ use std::sync::Arc;
 use tokio::sync::mpsc::channel;
 use serde_json::Value;
 use termcolor::{BufferWriter, Buffer, Color, ColorChoice, ColorSpec, WriteColor};
-pub type Error = Box<dyn std::error::Error + Send + Sync>;
-
-
 
 #[tokio::main(flavor = "multi_thread", worker_threads = 2)]
 pub async fn main() -> Result<(), std::io::Error> {
