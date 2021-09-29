@@ -81,6 +81,41 @@ jobs:
           asset_name: ${{ steps.get_name.outputs.NAME }}
           asset_content_type: application/zip
 
+  release-macm1:
+    name: aarch64-apple-darwin
+    needs: create_release
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: beta
+          target: aarch64-apple-darwin
+          override: true
+      - name: Set SDKROOT
+        run: echo "SDKROOT=$(xcrun -sdk macosx11.1 --show-sdk-path)" >> $GITHUB_ENV
+      - name: Set MACOSX_DEPLOYMENT_TARGET
+        run: echo "MACOSX_DEPLOYMENT_TARGET=$(xcrun -sdk macosx11.1 --show-sdk-platform-version)" >> $GITHUB_ENV
+      - name: cargo build
+        uses: actions-rs/cargo@v1
+        with:
+          command: build
+          args: --target aarch64-apple-darwin
+      - id: get_name
+        run: |
+          echo ::set-output name=NAME::saw-${GITHUB_REF/refs\/tags\//}-aarch64-apple-darwin.tar.gz
+      - uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.create_release.outputs.upload_url }}
+          asset_path: ./${{ steps.get_name.outputs.NAME }}
+          asset_name: ${{ steps.get_name.outputs.NAME }}
+          asset_content_type: application/zip
+
   release-windows:
     name: x86_64-pc-windows-gnu
     needs: create_release
