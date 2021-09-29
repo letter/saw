@@ -103,13 +103,13 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: build
-          args: --target aarch64-apple-darwin
+          args:
+            - --target aarch64-apple-darwin
+            - --release
       - id: get_name
         run: |
           echo ::set-output name=NAME::saw-${GITHUB_REF/refs\/tags\//}-aarch64-apple-darwin.tar.gz
       - run: |
-          ls target
-          ls target/aarch64-apple-darwin
           tar czf ${{ steps.get_name.outputs.NAME }} -C ./target/aarch64-apple-darwin/release saw
       - uses: actions/upload-release-asset@v1
         env:
