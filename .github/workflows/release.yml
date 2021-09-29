@@ -107,6 +107,9 @@ jobs:
       - id: get_name
         run: |
           echo ::set-output name=NAME::saw-${GITHUB_REF/refs\/tags\//}-aarch64-apple-darwin.tar.gz
+      - run: |
+          ls target
+          tar czf ${{ steps.get_name.outputs.NAME }} -C ./target/release saw
       - uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
