@@ -42,3 +42,12 @@
 [ "abcd", 1234 ]
 [ garbage wat aoeu aoesunthhaoeusnthaooeusnth ]
 [ "huhhuhuhuhuh",  wat, "i dunno" ]
+➤ YN0000: [@letter-hq/fury-service]: 14:34:13
+➤ YN0000: [@letter-hq/fury-service]:     SELECT
+➤ YN0000: [@letter-hq/fury-service]:       SUM("balance") AS balance
+➤ YN0000: [@letter-hq/fury-service]:     FROM
+➤ YN0000: [@letter-hq/fury-service]:       "connected-accounts"
+➤ YN0000: [@letter-hq/fury-service]:     WHERE
+➤ YN0000: [@letter-hq/fury-service]:     "organizationId" = '01G10J8N5FWQZCDWGMW8B3VFYM' AND
+➤ YN0000: [@letter-hq/fury-service]:     "status" = 'Ok'
+➤ YN0000: [@letter-hq/fury-service]:

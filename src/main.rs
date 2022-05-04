@@ -29,9 +29,13 @@ pub async fn main() -> Result<(), std::io::Error> {
     });
     while let Some(line) = lines.next().await {
         let line = line?;
-        if let Ok(record) = serde_json::from_str(&line) {
+        if let Ok(record) = serde_json::from_str::<Value>(&line) {
             let mut buf = bufwtr.buffer();
-            if let Err(_) = process_record(record, &mut buf) {
+            if record.is_object() {
+                if let Err(_) = process_record(record, &mut buf) {
+                    buf.write(line.as_bytes())?;
+                }
+            } else {
                 buf.write(line.as_bytes())?;
             }
             buf.write(b"\n")?;
